@@ -27,8 +27,8 @@ if opt.cuda:
     model = model.cuda()
     input = input.cuda()
 elif opt.device:
-    model = model.to(device=opt.device)
-    input = model.to(device=opt.device)
+    model = model.to(opt.device)
+    input = input.to(opt.device)
 
 out = model(input)
 out = out.cpu()
